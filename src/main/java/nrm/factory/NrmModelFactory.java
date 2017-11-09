@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
 import java.util.*;
 
 /**
- * Created by ${10190990} on 2017/8/6.
+ * Created by ${lknny@163.com} on 2017/8/6.
  */
 public class NrmModelFactory {
 	private static final Logger log = LoggerFactory.getLogger(NrmModelFactory.class);

@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
  * 数据集的key信息，它用在2个地方，一个是TableDataSet，用于记录key的数据。
  * 一个是BaseMocInfo，记录模型映射文件中的key信息。有些属性是共用的，有些属性是各自使用的
  *
- * @author 10015496
+ * @author lknny@163.com
  */
 public class DataSetKey {
 	public static final int PK = 0;

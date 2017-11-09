@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * 配置报表规则，每个xml文件中每个moc节点对应一个NrmRule
  *
- * Created by ${10190990} on 2017/8/6.
+ * Created by ${lknny@163.com} on 2017/8/6.
  */
 public class NrmRule {
 

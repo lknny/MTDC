@@ -1,7 +1,7 @@
 import com.zte.ums.cnms.cm.common.mq.MQSessionHolder;
-import com.zte.ums.cnms.cm.repworker.nrm.model.NrmModelManager;
-import com.zte.ums.cnms.cm.repworker.nrm.model.changehandler.NeModelManager;
-import com.zte.ums.cnms.cm.repworker.nrm.model.changehandler.NeModelPath;
+import nrm.model.NrmModelManager;
+import nrm.model.changehandler.NeModelManager;
+import nrm.model.changehandler.NeModelPath;
 import com.zte.ums.zenap.mq.client.api.*;
 import com.zte.ums.zenap.mq.client.api.exception.MQException;
 import mockit.Mock;

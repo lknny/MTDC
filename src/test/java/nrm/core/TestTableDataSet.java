@@ -1,7 +1,7 @@
-import com.zte.ums.cnms.cm.repworker.nrm.util.NrmUtil;
-import com.zte.ums.cnms.cm.repworker.nrm.factory.TableDataSetFactory;
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.NrmRule;
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.RepDataSet;
+import nrm.util.NrmUtil;
+import nrm.factory.TableDataSetFactory;
+import nrm.pojo.NrmRule;
+import nrm.pojo.RepDataSet;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by ${10190990} on 2017/8/16.
+ * Created by ${lknny@163.com} on 2017/8/16.
  */
 public class TestTableDataSet {
 	@Test

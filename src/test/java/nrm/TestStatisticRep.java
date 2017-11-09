@@ -1,5 +1,5 @@
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.NrmRule;
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.RepDataSet;
+import nrm.pojo.NrmRule;
+import nrm.pojo.RepDataSet;
 import NrmUtil;
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by ${10190990} on 2017/8/15.
+ * Created by ${lknny@163.com} on 2017/8/15.
  */
 public class TestStatisticRep {
 

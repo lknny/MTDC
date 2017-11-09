@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * 描述mo的moc信息或NRM moc的信息及其属性信息
- * @author 10015496
+ * @author lknny@163.com
  */
 public class BaseMocInfo {
 	/**

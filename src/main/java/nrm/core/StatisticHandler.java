@@ -1,7 +1,7 @@
 package nrm.core;
 
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.NrmRule;
-import com.zte.ums.cnms.cm.repworker.pojo.RepData;
+import nrm.pojo.NrmRule;
+import nrm.pojo.RepData;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 
 /**
- * Created by ${10190990} on 2017/8/15.
+ * Created by ${lknny@163.com} on 2017/8/15.
  */
 public class StatisticHandler {
 	private static final Logger log = LoggerFactory.getLogger(StatisticHandler.class);

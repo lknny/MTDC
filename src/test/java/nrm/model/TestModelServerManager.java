@@ -1,5 +1,5 @@
-import com.zte.ums.cnms.cm.repworker.nrm.model.changehandler.NeModelManager;
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.NrmModel;
+import nrm.model.changehandler.NeModelManager;
+import nrm.pojo.NrmModel;
 import MockFactory;
 import mockit.Deencapsulation;
 import org.junit.Test;
@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * TODO
  * 
- * @author 10190990
+ * @author lknny@163.com
  */
 public class TestModelServerManager {
 

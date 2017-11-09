@@ -1,5 +1,5 @@
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.NrmRule;
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.RepDataSet;
+import nrm.pojo.NrmRule;
+import nrm.pojo.RepDataSet;
 import NrmUtil;
 import junit.framework.TestCase;
 import org.junit.Test;

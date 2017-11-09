@@ -1,6 +1,6 @@
 import com.zte.ums.cnms.cm.core.model.pojo.NeModelModifyNotification;
 import com.zte.ums.cnms.cm.core.model.pojo.NeModelModifyNotifications;
-import com.zte.ums.cnms.cm.repworker.nrm.model.changehandler.ModelChangedMQListener;
+import nrm.model.changehandler.ModelChangedMQListener;
 import MockFactory;
 import org.junit.Before;
 import org.junit.Test;

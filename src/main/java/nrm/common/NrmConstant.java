@@ -1,7 +1,7 @@
 package nrm.common;
 
 /**
- * Created by ${10190990} on 2017/8/6.
+ * Created by ${lknny@163.com} on 2017/8/6.
  */
 public class NrmConstant {
 	public static final String MULTI_VER_FUNC = "#multiVer";

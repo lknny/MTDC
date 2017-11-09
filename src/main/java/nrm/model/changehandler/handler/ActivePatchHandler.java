@@ -1,14 +1,14 @@
 package nrm.model.changehandler.handler;
 
 import com.zte.ums.cnms.cm.core.model.pojo.NeModelModifyNotification;
-import com.zte.ums.cnms.cm.repworker.nrm.model.NrmModelManager;
+import nrm.model.NrmModelManager;
 
 import java.util.List;
 
 /**
  * 仅仅对CM模块进行处理
  * 
- * @author 10190990
+ * @author lknny@163.com
  */
 public class ActivePatchHandler extends ModelChangedHandler{
 	

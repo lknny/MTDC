@@ -1,9 +1,9 @@
 package nrm.core;
 
-import com.zte.ums.cnms.cm.repworker.nrm.common.CommFunc;
-import com.zte.ums.cnms.cm.repworker.nrm.common.NrmConstant;
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.BaseMocInfo;
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.DataSetKey;
+import nrm.common.CommFunc;
+import nrm.common.NrmConstant;
+import nrm.pojo.BaseMocInfo;
+import nrm.pojo.DataSetKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +15,7 @@ import java.util.*;
  * 实现MappingNrmRuleBase的抽象类，定义了基本的数据结构和访问方法。
  * 用户继承该抽象类后只需要在构造函数中定义原moc和NRMmoc的模型信息并实现mappingNrmAttr方法。
  *
- * @author 10015496
+ * @author lknny@163.com
  */
 public class MappingNrmRule {
 	private static final Logger log = LoggerFactory.getLogger(MappingNrmRule.class);
@@ -301,7 +301,7 @@ public class MappingNrmRule {
 	/**
 	 * 迭代器实现
 	 *
-	 * @author 10015496
+	 * @author lknny@163.com
 	 */
 	private class Itr implements Iterator<String[]> {
 		int cursor = 0;
@@ -332,7 +332,7 @@ public class MappingNrmRule {
 	/**
 	 * 扩展迭代器实现
 	 *
-	 * @author 10015496
+	 * @author lknny@163.com
 	 */
 	private class ItrExpand implements Iterator<List<String[]>> {
 		int cursor = 0;

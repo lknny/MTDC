@@ -3,15 +3,12 @@ package nrm;
 import nrm.core.MappingNrmRule;
 import nrm.core.StatisticHandler;
 import nrm.factory.TableDataSetFactory;
-import nrm.model.NrmModelManager;
-import nrm.pojo.NrmModel;
 import nrm.pojo.NrmRule;
 import nrm.pojo.RepDataSet;
 import org.jvnet.hk2.annotations.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.inject.Inject;
 import java.lang.reflect.Method;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -19,20 +16,20 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by ${10190990} on 2017/8/6.
+ * Created by ${lknny@163.com} on 2017/8/6.
  */
 @Service
 public class RepManager {
 	private static final Logger log = LoggerFactory.getLogger(RepManager.class);
-	@Inject
-	NrmModelManager nrmModelManager;
+//	@Inject
+//	NrmModelManager nrmModelManager;
 
-	public List<NrmModel> getAllNrmModel() {
-		return nrmModelManager.getAllNrmModels();
-	}
-	public NrmModel getNrmModelByKey(String key) {
-		return nrmModelManager.getNrmModel(key);
-	}
+//	public List<NrmModel> getAllNrmModel() {
+//		return nrmModelManager.getAllNrmModels();
+//	}
+//	public NrmModel getNrmModelByKey(String key) {
+//		return nrmModelManager.getNrmModel(key);
+//	}
 	public List<String[]> getResult(NrmRule nrmRule, List<RepDataSet> repDataSets) {
 		List<String[]> result = new LinkedList<>();
 		MappingNrmRule mappingNrmRule = getMappingNrmRule(nrmRule, repDataSets);

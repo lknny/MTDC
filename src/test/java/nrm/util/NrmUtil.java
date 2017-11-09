@@ -1,8 +1,8 @@
-import com.zte.ums.cnms.cm.repworker.nrm.TestEutranCellTdd;
-import com.zte.ums.cnms.cm.repworker.nrm.common.CommFunc;
-import com.zte.ums.cnms.cm.repworker.nrm.factory.NrmModelFactory;
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.NrmModel;
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.NrmRule;
+import nrm.TestEutranCellTdd;
+import nrm.common.CommFunc;
+import nrm.factory.NrmModelFactory;
+import nrm.pojo.NrmModel;
+import nrm.pojo.NrmRule;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by ${10190990} on 2017/8/10.
+ * Created by ${lknny@163.com} on 2017/8/10.
  */
 public class NrmUtil {
 	private static NrmModel nrmModel4Rep;

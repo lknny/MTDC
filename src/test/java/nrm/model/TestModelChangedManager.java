@@ -1,5 +1,5 @@
 import com.zte.ums.cnms.cm.common.mq.MQSessionHolder;
-import com.zte.ums.cnms.cm.repworker.nrm.model.changehandler.ModelChangedManager;
+import nrm.model.changehandler.ModelChangedManager;
 import MockFactory;
 import mockit.Deencapsulation;
 import org.junit.Assert;

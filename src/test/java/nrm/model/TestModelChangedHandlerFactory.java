@@ -1,5 +1,5 @@
 import com.zte.ums.cnms.cm.core.model.pojo.NeModelModifyNotification;
-import com.zte.ums.cnms.cm.repworker.nrm.model.changehandler.handler.ModelChangedHandlerFactory;
+import nrm.model.changehandler.handler.ModelChangedHandlerFactory;
 import org.junit.Assert;
 import org.junit.Test;
 

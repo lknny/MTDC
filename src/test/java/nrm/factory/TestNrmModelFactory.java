@@ -1,11 +1,11 @@
-import com.zte.ums.cnms.cm.repworker.nrm.TestEutranCellTdd;
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.NrmModel;
+import nrm.TestEutranCellTdd;
+import nrm.pojo.NrmModel;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by ${10190990} on 2017/8/30.
+ * Created by ${lknny@163.com} on 2017/8/30.
  */
 public class TestNrmModelFactory {
 

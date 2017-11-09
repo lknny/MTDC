@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by ${10190990} on 2017/8/10.
+ * Created by ${lknny@163.com} on 2017/8/10.
  */
 public class TestCommFunc {
 	@Test

@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * 配置报表模型，每个XMl文件对应一个配置报表模型
  *
- * Created by ${10190990} on 2017/8/7.
+ * Created by ${lknny@163.com} on 2017/8/7.
  */
 public class NrmModel {
 	/*

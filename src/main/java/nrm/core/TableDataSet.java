@@ -1,6 +1,6 @@
 package nrm.core;
 
-import com.zte.ums.cnms.cm.repworker.nrm.pojo.DataSetKey;
+import nrm.pojo.DataSetKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

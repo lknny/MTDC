@@ -1,4 +1,4 @@
-import com.zte.ums.cnms.cm.repworker.nrm.model.changehandler.NeModelPath;
+import nrm.model.changehandler.NeModelPath;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
