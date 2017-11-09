@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NrmModel>
+  <FileHead>
+    <nrmVersion>2.9.0</nrmVersion>
+    <mimType>ltetdd</mimType>
+    <mimVersionList>v3.4,v3.5</mimVersionList>
+    <description>the cm nrm model for cmcc 2.9.0 </description>
+    <import>com.zte.ums.cnms.cm.repworker.nrm.common</import>
+    <dnPrefix>DC=www.zte.com.cn,SubNetwork=ZTE_EUTRAN_SYSTEM</dnPrefix>
+  </FileHead>
+  <moTree>
+    <moc nrm="EutranCellTdd" parent="EnbFunction" preCheck="${empty EUtranCellTDD}" expand="">
+      <!--第2个emMOC开始都是aux moc，可使用pk（唯一索引）或mk1,mk2（多值索引）来定义数据，可以写多个key，但是只有第1个key的数据可以用EL表达式直接访问 -->
+      <emMoc em="EUtranCellTDD"/> <!--第1个emMOC是master moc，可以不写key -->
+      <emMoc em="PhyChannelTDD">
+        <key pk="MEID" pkRef="MEID"/>
+      </emMoc>
+      <emMoc em="UeTimerTDD">
+        <!--只有第一个key起作用，放入el上下文，其余key为函数服务-->
+        <key mk1="city" mk1Ref="VENDORNAME"/>
+        <key pk="MEID" pkRef="MEID"/>
+      </emMoc>
+      <attr nrm="Id" em="MEID"/>
+      <attr nrm="UserLabel" em="USERLABEL"/>
+      <attr nrm="DnPrefix" func="${'DC=www.zte.com.cn,SubNetwork=ZTE_EUTRAN_SYSTEM'}"/>
+      <attr nrm="VendorName" em="VENDORNAME"/>
+      <attr nrm="LocationName" em="PhyChannelTDD.LOCATIONNAME"/>
+      <attr nrm="ManagedBy" func="${'DC=www.zte.com.cn,SubNetwork=ZTE_EUTRAN_SYSTEM,ManagementNode=OMC'}"/>
+      <attr nrm="UserDefinedState" em="USERDEFINEDSTATE"/>
+      <attr nrm="SwVersion" em="SWVERSION"/>
+      <!--naf,内置函数，初始化数据时加载。-->
+      <attr nrm="AdministrativeState" em="adminStateLTETDD" func="${sum='';naf:moArr2List(adminStateLTETDD).stream().forEach(x->(sum=sum+=x+='-'));sum}"/>
+      <attr nrm="OperationalState" em="OperationalState" func="enum">
+        <enum nrm="Locked" em="0"/>
+        <enum nrm="Unlocked" em="1"/>
+        <enum nrm="ShuttingDown" em="2"/>
+        <enum nrm="Unknown type" em="other"/> <!--other代表其他数值时的枚举映射-->
+      </attr>
+      <attr nrm="Version" em="METYPE"/>
+      <!--ext，外置函数，需要在commFunc实现，静态，需要手动注入到MappingNrmRule中-->
+      <attr nrm="ManagementIpAddress" em="MEADDR" func="${ext:getAttrByPk(srcData,rowIdx,emMocInfo,'UeTimerTDD','b')}"/>
+      <attr nrm="HardwarePlatform" func="${naf:dateHandle(MEADDR,'yyyy-MM-dd HH:mm:ss')}"/>
+      <!--属性多版本-->
+      <attr nrm="PatchInfo" emVerAttr="mimVersion" em="Version,SWVERSION" func="multiVer">
+        <multiVer emVerValue="v3.4" func="${Version+='_Patch'}"/>
+        <multiVer emVerValue="v3.5" func="${SWVERSION+='_Patch'}"/>
+      </attr>
+      <attr nrm="NeType" em="UeTimerTDD.city,UeTimerTDD.b" func="${naf:join2List('-', UeTimerTDD.city,UeTimerTDD.b)}"/>
+    </moc>
+    <moc nrm="Cell" parent="ManagedElement">
+      <emMoc em="cell"/> <!--第1个emMOC是master moc，可以不写key -->
+      <emMoc em="EnbFunction">
+        <!--对key支持函数，比如截断-->
+        <key pk="funcLDN" pkRef="LDN" pkRefFunc="CommFunc.cutOffLDN" pkRefFuncPara="enb"/>
+      </emMoc>
+      <attr nrm="cellLdn" em="LDN"/>
+      <attr nrm="UserLabel" em="UserLabel"/>
+      <attr nrm="cellLocalId" em="cellLocalId"/>
+      <attr nrm="funcLDN" em="EnbFunction.funcLDN"/>
+      <attr nrm="mnn" em="EnbFunction.mnn"/>
+      <attr nrm="mnc" em="EnbFunction.mnc"/>
+    </moc>
+    <moc nrm="Cell2" parent="ManagedElement">
+      <emMoc em="EnbFunction"/>
+      <emMoc em="cell">
+        <key mk1="LDN" mk1Ref="funcLDN" mk1Func="CommFunc.cutOffLDN" mk1FuncPara="enb"/>
+      </emMoc>
+      <attr nrm="cellLdn" em="cell.LDN"/>
+      <attr nrm="UserLabel" em="cell.UserLabel"/>
+      <attr nrm="cellLocalId" em="cell.cellLocalId"/>
+      <attr nrm="funcLDN" em="funcLDN"/>
+      <attr nrm="mnn" em="mnn"/>
+      <attr nrm="mnc" em="EnbFunction.mnc"/>
+    </moc>
+    <moc nrm="Cell3" parent="ManagedElement">
+      <emMoc em="EnbFunction"/>
+      <emMoc em="cell">
+        <key mk1="cellLocalId" mk1Ref="mnc"/>
+      </emMoc>
+      <attr nrm="cellLdn" em="cell.LDN"/>
+      <attr nrm="UserLabel" em="cell.UserLabel"/>
+      <attr nrm="cellLocalId" em="cell.cellLocalId"/>
+      <attr nrm="funcLDN" em="funcLDN"/>
+      <attr nrm="mnn" em="mnn"/>
+      <attr nrm="mnc" em="EnbFunction.mnc"/>
+    </moc>
+    <!--支持报表数据的膨胀，按照expand字段，一般是list<object>，进行数据膨胀，其余非expand字段进行copy-->
+    <moc nrm="Cell4" parent="ManagedElement" expand="cellLdn,UserLabel,cellLocalId">
+      <emMoc em="EnbFunction"/>
+      <emMoc em="cell">
+        <key mk1="cellLocalId" mk1Ref="mnc"/>
+      </emMoc>
+      <attr nrm="cellLdn" em="cell.LDN"/>
+      <attr nrm="UserLabel" em="cell.UserLabel"/>
+      <attr nrm="cellLocalId" em="cell.cellLocalId"/>
+      <attr nrm="funcLDN" em="funcLDN"/>
+      <attr nrm="mnn" em="mnn"/>
+      <attr nrm="mnc" em="EnbFunction.mnc"/>
+    </moc>
+    <!--过滤器，filter，过滤掉el上下文中不满于表达式的数据，此时，使用迭代器迭代数据时可能返回null，需要进行判空处理-->
+    <moc nrm="Cell5" parent="ManagedElement" filter="${mnn != '301'}">
+      <emMoc em="EnbFunction"/>
+      <emMoc em="cell">
+        <key mk1="cellLocalId" mk1Ref="mnc"/>
+      </emMoc>
+      <attr nrm="cellLdn" em="cell.LDN"/>
+      <attr nrm="UserLabel" em="cell.UserLabel"/>
+      <attr nrm="cellLocalId" em="cell.cellLocalId"/>
+      <attr nrm="funcLDN" em="funcLDN"/>
+      <attr nrm="mnn" em="mnn"/>
+      <attr nrm="mnc" em="EnbFunction.mnc"/>
+    </moc>
+  </moTree>
+</NrmModel>

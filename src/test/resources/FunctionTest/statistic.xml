@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="GBK"?>
+<NrmModel>
+  <FileHead>
+  	<name>testCell</name>
+    <nrmVersion>2.9.0</nrmVersion>
+    <mimType>ltetdd</mimType>
+    <mimVersionList>v3.4,v3.5</mimVersionList>
+    <description>the cm nrm model for cmcc 2.9.0 </description>
+    <type>custom</type>
+    <creator>admin</creator>
+    <timestamp>XXXX-xx-xx xx:xx:xx</timestamp>
+    <import>com.zte.ums.cnms.cm.repworker.nrm.data</import>
+    <dnPrefix>DC=www.zte.com.cn,SubNetwork=ZTE_EUTRAN_SYSTEM</dnPrefix>
+  </FileHead>
+  <moTree>
+  	<!--statistic[0:非统计表表，1:统计报表，默认0]-->
+    <!--统计报表只包含分组字段和统计字段-->
+    <moc nrm="CellRep" parent="Cell" statistic="1">
+      <emMoc em="Cell"/>    
+      <emMoc em="ManagedElement">
+        <key pk="managedElement" pkRef="managedElement"/>
+      </emMoc>
+      <emMoc em="GNBFunction">
+        <key pk="moIdentify" pkRef="parentMoDesc"/>
+      </emMoc>
+      <attr nrm="managedElement" em="managedElement" group="true"/>
+      <attr nrm="gid" em="GNBFunction.gid" group="true"/>
+      <attr nrm="cellid" em="cellid" group="true"/>
+      <!--cal[是否分组字段：0-否，1-是，默认为0-->
+      <!--groupby[统计字段对应的分组字段，分组字段为空时，进行全表统计]）-->
+      <!--统计数量（无条件）-->
+  		<attr nrm="CellNum" func="${1}" cal="true"/>
+  		<!--统计数量（带条件）-->
+  		<attr nrm="linkStatusNum" func="${ManagedElement.linkStatus=='1'?1:0}" cal="true"/>
+    </moc>
+  </moTree>
+  <!--<i18n>-->
+  	<!--<lable key="" zh_CN="" en_US=""/>-->
+  <!--</i18n>-->
+</NrmModel>
