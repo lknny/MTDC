@@ -7,6 +7,7 @@
     <description>the cm nrm model for cmcc 2.9.0 </description>
     <import>com.zte.ums.cnms.cm.repworker.nrm.common</import>
     <dnPrefix>DC=www.zte.com.cn,SubNetwork=ZTE_EUTRAN_SYSTEM</dnPrefix>
+
   </FileHead>
   <moTree>
     <moc nrm="EutranCellTdd" parent="EnbFunction" preCheck="${empty EUtranCellTDD}" expand="">
