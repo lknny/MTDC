@@ -1,5 +1,7 @@
+package nrm.core;
+
+import nrm.pojo.RepData;
 import nrm.util.NrmUtil;
-import com.zte.ums.cnms.cm.repworker.pojo.RepData;
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -1,7 +1,9 @@
+package nrm;
+
+import junit.framework.TestCase;
 import nrm.pojo.NrmRule;
 import nrm.pojo.RepDataSet;
-import NrmUtil;
-import junit.framework.TestCase;
+import nrm.util.NrmUtil;
 import org.junit.Test;
 
 import java.util.ArrayList;

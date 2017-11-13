@@ -1,3 +1,5 @@
+package nrm.util;
+
 import nrm.TestEutranCellTdd;
 import nrm.common.CommFunc;
 import nrm.factory.NrmModelFactory;

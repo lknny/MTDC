@@ -1,3 +1,5 @@
+package nrm.common;
+
 import org.junit.Test;
 
 import java.lang.reflect.Method;

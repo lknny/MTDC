@@ -1,6 +1,8 @@
+package nrm;
+
 import nrm.pojo.NrmRule;
 import nrm.pojo.RepDataSet;
-import NrmUtil;
+import nrm.util.NrmUtil;
 import org.junit.Test;
 
 import java.util.ArrayList;

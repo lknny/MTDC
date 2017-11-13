@@ -1,3 +1,5 @@
+package nrm.pojo;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

@@ -1,7 +1,9 @@
-import nrm.util.NrmUtil;
+package nrm.core;
+
 import nrm.factory.TableDataSetFactory;
 import nrm.pojo.NrmRule;
 import nrm.pojo.RepDataSet;
+import nrm.util.NrmUtil;
 import org.junit.Test;
 
 import java.util.ArrayList;
