@@ -10,7 +10,7 @@ import java.util.*;
  * 提供一种数据结构,类似resultset，使用它来装载数据。实现一次性写入数据，后续快速读取的数据结构。
  * 对象中所有行号列号都是从0开始计数的。
  *
- * @author zdh
+ * @author lknny@163.com
  */
 public class TableDataSet {
 	private static final Logger log = LoggerFactory.getLogger(TableDataSet.class);

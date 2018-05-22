@@ -3,7 +3,7 @@ package nrm.pojo;
 import java.util.List;
 
 /**
- * Created by ${10190990} on 2017/11/9.
+ * Created by ${lknny@163.com} on 2017/11/9.
  */
 public class RepData {
 
